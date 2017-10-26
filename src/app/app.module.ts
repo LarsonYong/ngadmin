@@ -34,14 +34,30 @@ import {
   MatTooltipModule,
   MatStepperModule,
 } from '@angular/material';
+import { RouterModule } from '@angular/router';
 
+import { routing } from './app.routing'
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { BuildComponent } from './build/build.component';
+import { UnitComponent } from './unit/unit.component';
+import { GatewayComponent } from './gateway/gateway.component';
+import { UserComponent } from './user/user.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidebarComponent
+    SidebarComponent,
+    BuildComponent,
+    UnitComponent,
+    GatewayComponent,
+    UserComponent,
+    LoginComponent,
+    DashboardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -77,6 +93,16 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
+    RouterModule.forRoot([
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'login', component: LoginComponent},
+      { path: 'gateway', component: GatewayComponent },
+      { path: 'build', component: BuildComponent },
+      { path: 'unit', component: UnitComponent },
+      { path: 'user', component: UserComponent },
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'home', component: HomeComponent },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

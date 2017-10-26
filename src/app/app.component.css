@@ -41,7 +41,7 @@ mat-grid-tile {
   max-width:300px;
   background: #777;
   box-shadow: 0 15px 10px #777;
-  transform: rotate(-8deg);
+  transform: rotate(-5deg);
 }
 .mat-card:hover {
   box-shadow: 0 11px 6px -6px #777;
@@ -53,4 +53,22 @@ mat-grid-tile {
   -webkit-margin-after: 0;
   -webkit-margin-start: 0;
   -webkit-margin-end: 0;
+}
+
+.selected {
+  width: 92%
+}
+
+@font-face {
+  font-family: 'monacoregular';
+  src: url('../assets/fonts/monaco-webfont.woff2') format('woff2'),
+       url('../assets/fonts/monaco-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+* {
+  font-family: "monacoregular";
+  
 }
