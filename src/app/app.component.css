@@ -55,8 +55,11 @@ mat-grid-tile {
   -webkit-margin-end: 0;
 }
 
-.selected {
+.isOn {
   width: 92%
+}
+.disAbled {
+  
 }
 
 @font-face {

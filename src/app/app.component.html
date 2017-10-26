@@ -1,35 +1,30 @@
 <mat-toolbar  class="mat-elevation-z5" style='padding-left: 0; width:99%' >
     <button  (click)=gotohome() id='header-bttn' class="docs-button mat-button" style="margin-left:0; padding-left: 0;width: 15.15%; height:100%; border-right:gray 10px;" mat-button> 
         Devtest Admin</button>
-    <!-- background-color:#1592A4 -->
-    <!-- 01A99C -->
-    <!-- 2F91B8 -->
-    <!-- linear-gradient(to left, #83a4d4, #b6fbff) -->
-    <!-- background:linear-gradient(90deg, #0698b1 10%, #01a99c 90%) -->
 </mat-toolbar>
 <div style='width: 15%;float:left;'>
 <div class='left-menu mat-elevation-z5' style='height:80%;padding-top:1px; '>
     <a routerLink='dashboard' routerLinkActive="active">
-    <mat-card class='mat-elevation-z5 selected' style='height: 80px; background-color:#1592A4; ' > 
-        <a class="clearfix" style='float:left;font-size:80%;margin-top:33px;;;color:white'>DASHBOARD</a>
+    <mat-card class='mat-elevation-z5' [class.isOn]='dashboardwasClicked'  (click)='dashboardCLicked()'  style='height: 80px; background-color:#1592A4; ' > 
+        <a class="clearfix" style='float:left;font-size:80%;margin-top:33px;color:white'>DASHBOARD</a>
         <img style='float:right;margin-top:10px;' src='assets/icons/dashboard.png'>
     </mat-card>
     </a>
     <a routerLink='gateway' routerLinkActive="active">
-    <mat-card class='mat-elevation-z5 ' style='height: 80px; background-color:#01A99C; margin-top:6px; '> 
-        <a class="clearfix" style='float:left;font-size:80%;margin-top:33px;;;color:white'>GATEWAY</a>
+    <mat-card class='mat-elevation-z5 ' [class.isOn]='gatewaywasClicked'  (click)='gatewayCLicked()' style='height: 80px; background-color:#01A99C; margin-top:6px; '> 
+        <a class="clearfix" style='float:left;font-size:80%;margin-top:33px;color:white'>GATEWAY</a>
         <img style='float:right;margin-top:10px;' src='assets/icons/gateway1.png'>
     </mat-card>
-    </a>
+    </a>    
     <a routerLink='unit' routerLinkActive="active">
-    <mat-card class='mat-elevation-z5 ' style='height: 80px; background-color:#1592A4 ; margin-top:6px;' > 
-        <a class="clearfix" style='float:left;font-size:80%;margin-top:33px;;;color:white'>UNIT</a>
+    <mat-card class='mat-elevation-z5 ' [class.isOn]='unitwasClicked'  (click)='unitCLicked()' style='height: 80px; background-color:#1592A4 ; margin-top:6px;' > 
+        <a class="clearfix" style='float:left;font-size:80%;margin-top:33px;color:white'>UNIT</a>
         <img style='float:right;margin-top:10px;' src='assets/icons/unit.png'>
     </mat-card>
     </a>
     <a routerLink='build' routerLinkActive="active">
-    <mat-card class='mat-elevation-z5 ' style='height: 80px; background-color:#01A99C; margin-top:6px;' > 
-        <a class="clearfix" style='float:left;font-size:80%;margin-top:33px;;;color:white'>BUILD</a>
+    <mat-card class='mat-elevation-z5 ' [class.isOn]='buildwasClicked'  (click)='buildCLicked()'  style='height: 80px; background-color:#01A99C; margin-top:6px;' > 
+        <a class="clearfix" style='float:left;font-size:80%;margin-top:33px;color:white'>BUILD</a>
         <img style='float:right;margin-top:10px;' src='assets/icons/build.png'>
     </mat-card>
     </a>
@@ -40,20 +35,25 @@
         <mat-grid-tile style='background: #1592A4;left: 0px; width: calc(((50% - 1px) * 1) + 0px); margin-top: 0px; padding-top: calc(((25% - 1px) * 1) + 0px);'>
             <figure class="mat-figure"></figure>
         </mat-grid-tile>
-        <mat-grid-tile style='left: 0px; width: calc(((50% - 1px) * 1) + 0px); margin-top: 6px; padding-top: calc(((25% - 1px) * 1) + 0px);'>
-            <figure class="mat-figure"></figure>
-        </mat-grid-tile>
-        <!-- <div class="imghvr-flip-vert" style="background-color:#D14233;"> -->
+        
+
         
         <mat-grid-tile class='active' style='left: 0px; width: calc(((50% - 1px) * 1) + 0px); margin-top: 6px; padding-top: calc(((25% - 1px) * 1) + 0px);'>
-                <a  style='all: unset'routerLink='user' routerLinkActive="active" >
+                <a  style='all: unset' (click)='userCLicked()' routerLink='user' routerLinkActive="active" >
                     <div style='margin: -10px;'>
-                    <img  style='margin-top:-10px; display:block;float:left; position:relative;' src='assets/icons/user1.png'> 
+                    <img  style='margin-top:-10px; display:block;float:left; position:relative;' src='assets/icons/user3.png'> 
                     <a style='float:left; position:relative;margin-top:50px;margin-left:-40px;;font-size:80%;;color:white'>USER</a>
                     </div>
                 </a>
         </mat-grid-tile>
-        
+        <mat-grid-tile  class='active' style='left: 0px; width: calc(((50% - 1px) * 1) + 0px); margin-top: 6px; padding-top: calc(((25% - 1px) * 1) + 0px);'>
+            <a  style='all: unset' (click)='logoutCLicked()' >
+                <div style='margin: -10px;'>
+                <img  style='margin-top:-10px; display:block;float:left;left:5px; position:relative;' src='assets/icons/logout.png'> 
+                <a style='float:left; position:relative;;margin-top:50px;margin-left:-40px;;font-size:80%;;color:white'>LOGOUT</a>
+                </div>
+            </a>
+        </mat-grid-tile>
         
     </mat-grid-list>
 
