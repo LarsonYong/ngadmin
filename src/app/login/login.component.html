@@ -2,4 +2,16 @@
   <button   id='header-bttn' class="docs-button mat-button; font:" style="margin-left:0; padding-left: 0;width: 15.15%; height:100%; border-right:gray 10px;" mat-button> 
       Devtest Admin</button>
 </mat-toolbar>
-<img src='assets/Star.jpg' style='margin-right:5px;margin-top:5px;; width:99%; height:800px;'>
+<div  [ngStyle]="{'background': 'url(assets/Star.jpg)',width:'99%',height:'800px','background-size':'100% 100%'}">
+  <div style='height: 180px;'></div>
+  <form >
+    <h2>Devtest Admin
+    </h2>
+    
+    <div style='height:5px;'></div>
+    <input placeholder="Username" type="text" required="">
+    <input placeholder="Password" type="password" required="">
+    <button class="submit-button" mat-button >Submit</button>
+  </form>
+</div>
+<!-- <img src='assets/Star.jpg' style='margin-right:5px;margin-top:5px;; width:99%; height:800px;'> -->
