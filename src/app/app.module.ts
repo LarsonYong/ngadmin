@@ -46,8 +46,11 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
-import { AuthenticationGuardService} from '../app/services/authentication-guard.service'
-import { AuthenticationGuard } from '../app/services/authGuard.service'
+import { AuthenticationGuardService} from '../app/services/authentication-guard.service';
+import { AuthenticationGuard } from '../app/services/authGuard.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http'
+
 
 @NgModule({
   declarations: [
@@ -63,6 +66,9 @@ import { AuthenticationGuard } from '../app/services/authGuard.service'
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatAutocompleteModule,
     MatButtonModule,
@@ -124,6 +130,7 @@ import { AuthenticationGuard } from '../app/services/authGuard.service'
   providers: [
     AuthenticationGuardService,
     AuthenticationGuard
+
   ],
   bootstrap: [AppComponent]
 })
