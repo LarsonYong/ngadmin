@@ -1,0 +1,17 @@
+.my-container {
+    background-color:#DDF4F2;
+    background: linear-gradient(to right, #DFF2F6 0%,rgb(214, 241, 239) 100%);
+    margin-right: 20px;
+    margin-top:5px;
+    margin-left: 18px;
+    height: 84%;
+    width: 66%;
+    border-radius: 10px;
+    /* box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); */
+    /* box-shadow: 0px 0px 5px -8px rgba(0,0,0,0.25), 0px 12px 5px -8px rgba(0,0,0,0.22); */
+    position: absolute;
+}
+.container {
+    width:82%;
+    
+}

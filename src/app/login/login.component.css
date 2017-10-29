@@ -5,7 +5,7 @@
 
 body {
 	background: #eee;
-  -webkit-font-smoothing: antialiased;
+   -webkit-font-smoothing: antialiased;
 }
 
 hgroup { 
@@ -232,3 +232,7 @@ footer img {
 	width: 80px;
 	transition: all .2s ease;
 }
+::ng-deep snack-bar-container.custom-class {
+	font-family: "monacoregular"; 
+  }
+  

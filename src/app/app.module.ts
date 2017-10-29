@@ -104,29 +104,55 @@ import { HttpModule } from '@angular/http'
     RouterModule.forRoot([
       {
         path: 'login', component: LoginComponent,
+        
       },
       {
-        path: '', component: HomeComponent, canActivate:[AuthenticationGuard]
-      },
-      {
-        path: 'dashboard', component: DashboardComponent, canActivate:[AuthenticationGuard]
-      },
-      {
-        path: 'gateeway', component: GatewayComponent, canActivate:[AuthenticationGuard]
-      },
-      {
-        path: 'build', component: BuildComponent, canActivate:[AuthenticationGuard]
-      },
-      {
-        path: 'unit', component: UnitComponent , canActivate:[AuthenticationGuard] 
-      },
-      {
-        path: 'user', component: UserComponent, canActivate:[AuthenticationGuard]
-      },
-      {
-        path: '**', redirectTo: '', pathMatch:'full', canActivate:[AuthenticationGuard]
-      },
-    ])],
+        path: 'home', component:HomeComponent,
+        children: [
+          {
+            path: 'dashboard', component: DashboardComponent
+          },
+          {
+            path: 'gateway', component: GatewayComponent
+          },
+          {
+            path: 'build', component: BuildComponent
+          },
+          {
+            path: 'unit', component: UnitComponent
+          },
+          {
+            path: 'user', component: UserComponent
+          },
+          {
+            path: '',redirectTo: 'home', pathMatch:'full'
+          },
+        ]
+      }
+      // {
+      //   path: '', component: HomeComponent, canActivate:[AuthenticationGuard]
+      // },
+      // {
+      //   path: 'dashboard', component: DashboardComponent, canActivate:[AuthenticationGuard]
+      // },
+      // {
+      //   path: 'gateeway', component: GatewayComponent, canActivate:[AuthenticationGuard]
+      // },
+      // {
+      //   path: 'build', component: BuildComponent, canActivate:[AuthenticationGuard]
+      // },
+      // {
+      //   path: 'unit', component: UnitComponent , canActivate:[AuthenticationGuard] 
+      // },
+      // {
+      //   path: 'user', component: UserComponent, canActivate:[AuthenticationGuard]
+      // },
+      // {
+      //   path: '**', redirectTo: '/', pathMatch:'full', canActivate:[AuthenticationGuard]
+      // },
+    ]
+  )
+],
   providers: [
     AuthenticationGuardService,
     AuthenticationGuard

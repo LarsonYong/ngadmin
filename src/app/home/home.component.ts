@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { Component, OnInit, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Router, ActivatedRoute, Params, NavigationEnd } from '@angular/router'
+import { logout, isloggedin} from '../services/authentication-guard.service'
 
 @Component({
   selector: 'app-home',
@@ -7,53 +8,84 @@ import { Router } from '@angular/router'
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  currentUrl: String;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private cdr: ChangeDetectorRef
+  ) {
+    this.currentUrl = this.activatedRoute.snapshot.children[0].url[0].path;
+    if (this.currentUrl == 'build') {
+      this.buildCLicked();
+    }
+    if (this.currentUrl == 'gateway') {
+      this.gatewayCLicked();
+    }
+    if (this.currentUrl == 'unit') {
+      this.unitCLicked();
+    }
+    if (this.currentUrl == 'dashboard') {
+      this.dashboardCLicked();
+    }
+    if (!this.currentUrl ) {
+      this.router.navigateByUrl('/home')
+    } 
+   }
 
   ngOnInit() {
+   
   }
+
   dashboardwasClicked = false;
   gatewaywasClicked = false;
   buildwasClicked = false;
   unitwasClicked = false;
-  
-  
+
+  logoutCLicked() {
+    const checkResult = isloggedin();
+    if (checkResult) {
+        logout();
+        this.router.navigateByUrl('/login') ;
+    }
+
+  }
 
   gotohome() {
-    this.router.navigateByUrl('/home')
-    this.gatewaywasClicked = false
-    this.buildwasClicked = false
-    this.unitwasClicked = false
-    this.dashboardwasClicked  =false
+    this.router.navigateByUrl('/home');
+    this.gatewaywasClicked = false;
+    this.buildwasClicked = false;
+    this.unitwasClicked = false;
+    this.dashboardwasClicked  = false;
   }
   dashboardCLicked() {
-    this.dashboardwasClicked = true
-    this.gatewaywasClicked = false
-    this.buildwasClicked = false
-    this.unitwasClicked = false
+    this.dashboardwasClicked = true;
+    this.gatewaywasClicked = false;
+    this.buildwasClicked = false;
+    this.unitwasClicked = false;
   }
   gatewayCLicked() {
-    this.gatewaywasClicked = true
-    this.buildwasClicked = false
-    this.unitwasClicked = false
-    this.dashboardwasClicked  =false
+    this.gatewaywasClicked = true;
+    this.buildwasClicked = false;
+    this.unitwasClicked = false;
+    this.dashboardwasClicked  = false;
   }
   buildCLicked() {
-    this.buildwasClicked = true
-    this.gatewaywasClicked = false
-    this.unitwasClicked = false
-    this.dashboardwasClicked  =false
+    this.buildwasClicked = true;
+    this.gatewaywasClicked = false;
+    this.unitwasClicked = false;
+    this.dashboardwasClicked  = false;
   }
   unitCLicked() {
-    this.unitwasClicked = true
-    this.gatewaywasClicked = false
-    this.buildwasClicked = false
-    this.dashboardwasClicked  =false
+    this.unitwasClicked = true;
+    this.gatewaywasClicked = false;
+    this.buildwasClicked = false;
+    this.dashboardwasClicked  = false;
   }
   userCLicked() {
-    this.gatewaywasClicked = false
-    this.buildwasClicked = false
-    this.unitwasClicked = false
-    this.dashboardwasClicked  =false
+    this.gatewaywasClicked = false;
+    this.buildwasClicked = false;
+    this.unitwasClicked = false;
+    this.dashboardwasClicked  = false;
   }
 }

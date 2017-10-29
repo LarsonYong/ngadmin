@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body{
+    background-color: #0F7486  
+}
+html, body, app-root, app-home {
+    height:100%;
+}
+#work-area {
+    height: calc(100vh - 24px);
+}
+/* white: #F0F0F8 */
+/* pure-white:#FFFDFF */
