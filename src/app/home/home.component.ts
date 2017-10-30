@@ -15,23 +15,25 @@ export class HomeComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private cdr: ChangeDetectorRef
   ) {
-    this.currentUrl = this.activatedRoute.snapshot.children[0].url[0].path;
-    if (this.currentUrl == 'build') {
-      this.buildCLicked();
-    }
-    if (this.currentUrl == 'gateway') {
-      this.gatewayCLicked();
-    }
-    if (this.currentUrl == 'unit') {
-      this.unitCLicked();
-    }
-    if (this.currentUrl == 'dashboard') {
-      this.dashboardCLicked();
-    }
-    if (!this.currentUrl ) {
+    if (this.activatedRoute.snapshot.children[0] == undefined) {
       this.router.navigateByUrl('/home')
-    } 
+    }
+    else{
+      this.currentUrl = this.activatedRoute.snapshot.children[0].url[0].path;
+      if (this.currentUrl == 'build') {
+        this.buildCLicked();
+      }
+      if (this.currentUrl == 'gateway') {
+        this.gatewayCLicked();
+      }
+      if (this.currentUrl == 'unit') {
+        this.unitCLicked();
+      }
+      if (this.currentUrl == 'dashboard') {
+        this.dashboardCLicked();
+      }
    }
+  }
 
   ngOnInit() {
    

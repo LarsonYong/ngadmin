@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './gateway.component.html',
   styleUrls: [
     './gateway.component.css',
-    '../../assets/css/card.css'
+    // '../../assets/css/card.css'
 ]
 })
 export class GatewayComponent implements OnInit {

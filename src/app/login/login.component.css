@@ -3,8 +3,8 @@
 }
 * { box-sizing:border-box; }
 
-body {
-	background: #eee;
+.tmp-body {
+	background: #eee ;
    -webkit-font-smoothing: antialiased;
 }
 

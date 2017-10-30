@@ -107,27 +107,30 @@ import { HttpModule } from '@angular/http'
         
       },
       {
-        path: 'home', component:HomeComponent,
+        path: 'home', component:HomeComponent, canActivate:[AuthenticationGuard],
         children: [
           {
-            path: 'dashboard', component: DashboardComponent
+            path: 'dashboard', component: DashboardComponent, canActivate:[AuthenticationGuard]
           },
           {
-            path: 'gateway', component: GatewayComponent
+            path: 'gateway', component: GatewayComponent, canActivate:[AuthenticationGuard]
           },
           {
-            path: 'build', component: BuildComponent
+            path: 'build', component: BuildComponent, canActivate:[AuthenticationGuard]
           },
           {
-            path: 'unit', component: UnitComponent
+            path: 'unit', component: UnitComponent, canActivate:[AuthenticationGuard]
           },
           {
-            path: 'user', component: UserComponent
+            path: 'user', component: UserComponent, canActivate:[AuthenticationGuard]
           },
           {
-            path: '',redirectTo: 'home', pathMatch:'full'
+            path: '',redirectTo: 'home', pathMatch:'full', canActivate:[AuthenticationGuard]
           },
         ]
+      },
+      {
+        path: '', redirectTo: 'home', pathMatch: 'full', canActivate:[AuthenticationGuard]
       }
       // {
       //   path: '', component: HomeComponent, canActivate:[AuthenticationGuard]

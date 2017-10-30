@@ -1,8 +1,9 @@
+<body class="tmp-body" style="margin-bottom: 150px;">
 <mat-toolbar  class="mat-elevation-z5" style='padding-left: 0; width:99%' >
   <button   id='header-bttn' class="docs-button mat-button; font:" style="margin-left:0; padding-left: 0;width: 15.15%; height:100%; border-right:gray 10px;" mat-button> 
       Devtest Admin</button>
 </mat-toolbar>
-<div  [ngStyle]="{'background': 'url(assets/Star.jpg)',width:'99%',height:'800px','background-size':'100% 100%'}">
+<div  [ngStyle]="{'background': 'url(assets/Star.jpg)',width:'100%',height:'800px','background-size':'100% 100%'}">
   <div style='height:250px;'></div>
   <form [formGroup]="form" (ngSubmit)="onSubmit(form.value )">
     <div class="group">
@@ -10,7 +11,7 @@
       <label>Username</label>
     </div>
     <div class="group">
-      <input  [formControl]="password" name='password' type="password" class="form-control" id="password" [ngClass]="{'used':password.dirty}" ><span class="highlight"></span><span class="bar"></span>
+      <input  [formControl]="password" name='password' type="password" class="form-control" id="password" [ngClass]="{'used':password.dirty || password}" ><span class="highlight"></span><span class="bar"></span>
       <label class='used'>Password</label>
     </div>
     <button mat-button   type="submit" style="color:white" class="button buttonBlue">Sign in
@@ -20,5 +21,8 @@
   
 </div>
 
-<footer><p>Created by Jack</p></footer>
+<footer>
+  <p>Created by Jack</p>
+</footer>
 <!-- <img src='assets/Star.jpg' style='margin-right:5px;margin-top:5px;; width:99%; height:800px;'> -->
+</body>
