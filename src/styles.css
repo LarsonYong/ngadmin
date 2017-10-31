@@ -2,7 +2,8 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 body{
-    background-color: #0F7486  
+    /* background-color: #0F7486;   */
+    background-color: #edf0f5
 }
 html, body, app-root, app-home {
     height:100%;

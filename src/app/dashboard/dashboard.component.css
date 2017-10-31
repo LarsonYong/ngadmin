@@ -1,6 +1,6 @@
 .my-container {
-    background-color:#DDF4F2;
-    background: linear-gradient(to right, #DFF2F6 0%,rgb(214, 241, 239) 100%);
+    background-color:white;
+    /* background: linear-gradient(to right, #DFF2F6 0%,rgb(214, 241, 239) 100%); */
     margin-right: 20px;
     margin-top:5px;
     margin-left: 18px;

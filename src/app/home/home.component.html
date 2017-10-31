@@ -1,31 +1,31 @@
 <div class='white-back' style='border-radius: 10px; background-color:#F5F9FA; '>
-<div class="mat-elevation-z5 topbar"  >
+<div class="mat-elevation-z5 topbar" style='background-color: #1DA1F2' >
     <button mat-button (click)=gotohome()  class="header-button" >
         Devtest Admin</button>
 </div>
 <div class="left-menu" >
 <div class='' style='height: 100%'>
     <a routerLink='dashboard' routerLinkActive="active" style='height:100%'>
-    <mat-card class='mat-elevation-z5 sidebutton white' [routerLinkActive]="['isOn']" (click)='dashboardCLicked()'  style='background-color:#F5F9FA' >
-        <a class="clearfix" style='float:left;font-size:80%;margin-top:33px;color:white; position:absolute;top: 20%;'>DASHBOARD</a>
+    <mat-card class='mat-elevation-z5 sidebutton ' [routerLinkActive]="['isOn']" (click)='dashboardCLicked()'  style='' >
+        <a class="clearfix" style='float:left;font-size:80%;margin-top:33px;color:#1DA1F2; position:absolute;top: 20%;'>DASHBOARD</a>
         <img style='float:left;margin-top:10px;margin-left:59%; position:absolute;top: 20%;' src='assets/icons/dashboard.png'>
     </mat-card>
     </a>
     <a routerLink='gateway' routerLinkActive="active" style='height:100%'>
     <mat-card class='mat-elevation-z5 sidebutton' [class.isOn]='gatewaywasClicked'  (click)='gatewayCLicked()' style=''>
-        <a class="clearfix" style='float:left;font-size:80%;margin-top:33px;color:white; position:absolute;top: 20%;'>GATEWAY</a>
+        <a class="clearfix" style='float:left;font-size:80%;margin-top:33px;;color:#1DA1F2; position:absolute;top: 20%;'>GATEWAY</a>
         <img style='float:left;margin-top:10px;margin-left:59%; position:absolute;top: 20%;' src='assets/icons/gateway1.png'>
     </mat-card>
     </a>
     <a routerLink='unit' routerLinkActive="active" style='height:100%'>
     <mat-card class='mat-elevation-z5 sidebutton' [class.isOn]='unitwasClicked'  (click)='unitCLicked()' style='' >
-        <a class="clearfix" style='float:left;font-size:80%;margin-top:33px;color:white; position:absolute;top: 20%;'>UNIT</a>
+        <a class="clearfix" style='float:left;font-size:80%;margin-top:33px;color:#1DA1F2; position:absolute;top: 20%;'>UNIT</a>
         <img style='float:right;margin-top:10px;margin-left:59%; position:absolute;top: 20%;' src='assets/icons/unit.png'>
     </mat-card>
     </a>
     <a routerLink='build' routerLinkActive="active" style='height:100%'>
     <mat-card class='mat-elevation-z5 sidebutton' [class.isOn]='buildwasClicked'  (click)='buildCLicked()'  style='' >
-        <a class="clearfix" style='float:left;font-size:80%;margin-top:33px;color:white; position:absolute;top: 20%;'>BUILD</a>
+        <a class="clearfix" style='float:left;font-size:80%;margin-top:33px;color:#1DA1F2; position:absolute;top: 20%;'>BUILD</a>
         <img style='float:right;margin-top:10px;margin-left:59%; position:absolute;top: 20%;' src='assets/icons/build.png'>
     </mat-card>
     </a>
@@ -44,7 +44,7 @@
                 <a  style='all: unset' (click)='userCLicked()' routerLink='user' routerLinkActive="active" >
                     <div style='margin: -10px;'>
                     <img  style='margin-top:-10px; display:block;float:left; position:relative;' src='assets/icons/user3.png'>
-                    <a style='float:left; position:relative;margin-top:50px;margin-left:-40px;;font-size:80%;;color:white'>USER</a>
+                    <a style='float:left; position:relative;margin-top:50px;margin-left:-40px;;font-size:80%;;color:#1DA1F2'>USER</a>
                     </div>
                 </a>
         </mat-grid-tile>
@@ -52,7 +52,7 @@
             <a  style='all: unset' (click)='logoutCLicked()' >
                 <div style='margin: -10px;'>
                 <img  style='margin-top:-10px; display:block;float:left;left:5px; position:relative;' src='assets/icons/logout.png'>
-                <a style='float:left; position:relative;;margin-top:50px;margin-left:-40px;;font-size:80%;;color:white'>LOGOUT</a>
+                <a style='float:left; position:relative;;margin-top:50px;margin-left:-40px;;font-size:80%;;color:#1DA1F2'>LOGOUT</a>
                 </div>
             </a>
         </mat-grid-tile>

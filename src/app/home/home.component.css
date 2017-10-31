@@ -121,12 +121,16 @@
     align-items: center; /* Vertical center alignment */
     justify-content: center; /* Horizontal center alignment */
     -webkit-tap-highlight-color: transparent;
+    background-color:  #e8f5fd;
+    color: #1DA1F2;
   }
 
   .sidebutton{
     height: 80px; 
+    color:#1DA1F2;
+    /* background-color: #1DA1F2; */
     /* background-color:#6ADBD4;  */
-    /* background: linear-gradient(135deg, #6ADBD4 0%,#6ADBD4 24%,#6ADBD4 50%,#6ADBD4 79%,#6ADBD4 100%); */
+    /* background: linear-gradient(135deg, #6ADBD4 0%,rgb(104, 218, 210) 24%,rgb(113, 214, 207) 50%,rgb(115, 219, 212) 79%,#6ADBD4 100%); */
     margin-top:15px;
     border-radius: 10px 
   }
