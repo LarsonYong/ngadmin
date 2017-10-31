@@ -5,14 +5,19 @@
     width: 40%
 }
 .col-5 {
-    width: 50%
+    width: 49%
 }
+ 
+* {
+    font-family: "monacoregular";
+    
+  }
 .my-container {
     /* background-color:white; */
     /* background: linear-gradient(to right, #DFF2F6 0%,rgb(214, 241, 239) 100%); */
-    margin-right: 20px;
+    margin-right: auto;
     margin-top:5px;
-    margin-left: 18px;
+    margin-left: auto;
     height: 84%;
     width: 66%;
     border-radius: 10px;
@@ -26,8 +31,30 @@
 }
 .card {
     background-color: white;
-
+    margin-top: 12px;
+    margin-right: 12px;
+    float: left;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    background-clip: padding-box;
 
 }
+.my-button {
+    height:7%;
+    width: 17%;
+    background-color: #009ac9;
+    border: 1px solid transparent;
+    color: #ffffff;
+    font-weight: 300;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.my-button:hover{
+    background-color: #ffffff;
+    color: #009ac9;
+    border-color: #009ac9;
+}
+
