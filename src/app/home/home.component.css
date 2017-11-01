@@ -64,6 +64,7 @@
   .isOn {
     /* width:  calc(100% + 10px); */
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    font-weight:bold; 
   }
   
   @font-face {
@@ -123,6 +124,7 @@
     -webkit-tap-highlight-color: transparent;
     background-color:  #e8f5fd;
     color: #1DA1F2;
+    
   }
 
   .sidebutton{

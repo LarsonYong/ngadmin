@@ -3,12 +3,43 @@
   <button class="my-button" >30 server</button>
   <button class="my-button" >40 server</button>
   <button class="my-button" >50 server</button>
-  <button class="my-button" >Devtest.v5systems.us</button>
+  <button (click)='clicklogin60()' class="my-button" >Devtest.v5systems.us</button>
   <button class="my-button" >70 server</button>
   <div class="card col-5">
-    <div class="header"> 60 server</div>
-    <div class="content">
-    
+    <div class="card-header"> 60 server</div>
+    <div class="card-content" style='height:auto'>
+        <div><button (click)='clickallconnectunit60()' >show units</button></div>
+        <p> {{message}}</p>
+        <div class="table-responsive" style="width: 97%" [hidden]="!showunits60form">
+          <table class="table table-hover">
+            <thead >
+            <tr class="black-muted-bg"  >
+              <th>S.No.</th>
+                <th>Unit ID</th>
+                <th>IP address</th>
+                <th>Network interface</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+                </thead>
+                <tbody>
+            
+            <tr *ngFor="let userData of allcnntdunitlist60  ; let i = index; trackBy: userId" [hidden]="!userData.status" >
+              <td>{{i+1}}</td>
+              <td>{{userData.unitId}}</td>
+            
+              <td>{{userData.attrInfo.networkInfo?.unitIp}}</td>
+              <td>{{userData.attrInfo.v5nmConfig?.Config.Interfaces.iface1.Info}}</td>
+              <td>{{userData.status}}</td>
+              <td>
+                  <!-- <a (click)="display60UnitInfo(userData.unitId)" class="btn btn-primary">Detail</a> -->
+                <a [routerLink]="['/userDetails/',userData.Username]" [queryParams]="{username:userData.Username}" class="btn btn-primary">Detail</a>
+              </td>
+            </tr>
+              </table>
+            
+          </div>
+            
     </div>
   </div>
   <div class="card col-5"> 70 server</div>

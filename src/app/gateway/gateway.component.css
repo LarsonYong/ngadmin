@@ -58,3 +58,7 @@
     border-color: #009ac9;
 }
 
+.card-header {
+    padding: 12px 12px 12px 12px;
+    border-bottom: 1.5px solid #1DA1F2;
+}
