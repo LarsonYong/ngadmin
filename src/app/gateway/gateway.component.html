@@ -1,21 +1,22 @@
 <div class="my-container" >
   <div style='height: 7%'>
-  <button class="my-button" >30 server</button>
-  <button class="my-button" >40 server</button>
-  <button class="my-button" >50 server</button>
+  <button (click)='clicklogin30()' class="my-button" >30 server</button>
+  <button (click)='clicklogin40()' class="my-button" >40 server</button>
+  <button (click)='clicklogin50()' class="my-button" >50 server</button>
   <button (click)='clicklogin60()' class="my-button" >Devtest.v5systems.us</button>
-  <button class="my-button" >70 server</button>
+  <button (click)='clicklogin70()' class="my-button" >70 server</button>
   </div>
+   <!-- 60 server -->
   <div class="card" [hidden]='!loggedin60'>
     <div class="card-header" >
-       <div style='float:left; height:40px;vertical-align: middle;padding-top:10px;'> 60 server</div>
-      <div style='float:right;height:40px;margin-left:40px;vertical-align: middle;padding-top:10px;'>
-        <button (click)='clickallconnectunit60()' >Online units</button>
-        <button  >Get version</button>
+       <div style='float:left;margin-left:16px;; height:40px;vertical-align: middle;padding-top:10px;'> 60 server</div>
+      <div style='float:right;height:40px;margin-left:40px;margin-right:16px;vertical-align: middle;padding-top:10px;'>
+        <button (click)='clickallconnectunit60()' >Show all units</button>
+        <button (click)='get60unitInfo()' >Get version</button>
       </div>
     </div>
-    <div class="card-content" style='height:auto' [hidden]="!showunits60form">
-        <div class="table-responsive" style="width: 90%;padding: 6px 6px 6px 6px;" >
+    <div class="card-content" style='height:auto' >
+        <div class="table-responsive" style="width: 90%;padding: 16px 20px 16px 20px;" [hidden]="!showunits60form">
           <table class="table table-hover">
             <thead >
             <tr class="black-muted-bg"  >
@@ -30,7 +31,7 @@
                 <tbody>
             
             <!-- <tr *ngFor="let userData of allcnntdunitlist60  ; let i = index; trackBy: userId" [hidden]="!(userData.status && showofflineunit)" > -->
-            <tr *ngFor="let userData of allcnntdunitlist60  ; let i = index; trackBy: userId" >
+            <tr *ngFor="let userData of allcnntdunitlist60  ; let i = index; trackBy: userId" [hidden]="!(userData.status)">
               <td style='font-size:15px;'>{{i+1}}</td>
               <td>{{userData.unitId}}</td>
               <td>{{userData.attrInfo.networkInfo?.unitIp}}</td>
@@ -44,7 +45,295 @@
               </table>
           </div>
     </div>
+    <div class="table-responsive" style="width: 90%;padding: 16px 20px 16px 20px;" [hidden]="!version60">
+        <table class="table table-hover">
+            <thead>
+            <tr class="black-muted-bg">
+                <th >S.No.</th>
+                <th>Unit ID</th>
+                <th>Build version</th>
+                <th align="center">Sensor board version</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let unit of unitversion60; let i = index; trackBy: userId">
+                <td>{{i+1}}</td>
+                <td>{{unit.versioninfo.unitId}}</td>
+                <td >{{unit.versioninfo.version}}</td>
+                <td style='text-align:center'>{{unit.versioninfo.sensorBoardVersion}}</td>
+            <td>
+                <button mat-button [routerLink]="" [queryParams]="" class="btn btn-primary">Detail</button>
+                
+            </td>
+            </tr>
+        </table>
+    </div>
   </div>
-  <div [hidden]="!loggedin60" class="card"> 70 server</div>
-  <p> {{message}}</p>
+  
+  <!-- 30 server -->
+  <div class="card"  [hidden]='!loggedin30'>
+      <div class="card-header" >
+         <div style='float:left;margin-left:16px;; height:40px;vertical-align: middle;padding-top:10px;'> 30 server</div>
+        <div style='float:right;height:40px;margin-left:40px;margin-right:16px;vertical-align: middle;padding-top:10px;'>
+          <button (click)='clickallconnectunit30()' >Show all units</button>
+          <button (click)='get30unitInfo()' >Get version</button>
+        </div>
+      </div>
+      <div class="card-content" style='height:auto' >
+          <div class="table-responsive" style="width: 90%;padding: 16px 20px 16px 20px;" [hidden]="!showunits30form">
+            <table class="table table-hover">
+              <thead >
+              <tr class="black-muted-bg"  >
+                <th>S.No.</th>
+                  <th>Unit ID</th>
+                  <th>IP address</th>
+                  <th>Network interface</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+                  </thead>
+                  <tbody>
+             
+              <!-- <tr *ngFor="let userData of allcnntdunitlist30  ; let i = index; trackBy: userId" [hidden]="!(userData.status && showofflineunit)" > -->
+              <tr *ngFor="let userData of allcnntdunitlist30  ; let i = index; trackBy: userId" [hidden]="!(userData.status)" >
+                <td style='font-size:15px;'>{{i+1}}</td>
+                <td>{{userData.unitId}}</td>
+                <td>{{userData.attrInfo.networkInfo?.unitIp}}</td>
+                <td>{{userData.attrInfo.v5nmConfig?.Config.Interfaces.iface1.Info}}</td>
+                <td>{{userData.status}}</td>
+                <td>
+                    <!-- <a (click)="display30UnitInfo(userData.unitId)" class="btn btn-primary">Detail</a> -->
+                  <button mat-button class="btn btn-primary">Detail</button>
+                </td>
+              </tr>
+                </table>
+            </div>
+      </div>
+      <div class="table-responsive" style="width: 90%;padding: 16px 20px 16px 20px;" [hidden]="!version30">
+          <table class="table table-hover">
+              <thead>
+              <tr class="black-muted-bg">
+                  <th >S.No.</th>
+                  <th>Unit ID</th>
+                  <th>Build version</th>
+                  <th align="center">Sensor board version</th>
+                  <th>Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let unit of unitversion30; let i = index; trackBy: userId">
+                  <td>{{i+1}}</td>
+                  <td>{{unit.versioninfo.unitId}}</td>
+                  <td >{{unit.versioninfo.version}}</td>
+                  <td style='text-align:center'>{{unit.versioninfo.sensorBoardVersion}}</td>
+              <td>
+                  <button mat-button [routerLink]="" [queryParams]="" class="btn btn-primary">Detail</button>
+                 
+              </td>
+              </tr>
+          </table>
+      </div>
+    </div>
+   
+  <!-- 40 server -->
+  <div class="card" [hidden]='!loggedin40'>
+      <div class="card-header" >
+         <div style='float:left;margin-left:16px;; height:40px;vertical-align: middle;padding-top:10px;'> 40 server</div>
+        <div style='float:right;height:40px;margin-left:40px;margin-right:16px;vertical-align: middle;padding-top:10px;'>
+          <button (click)='clickallconnectunit40()' >Show all units</button>
+          <button (click)='get40unitInfo()' >Get version</button>
+        </div>
+      </div>
+      <div class="card-content" style='height:auto' >
+          <div class="table-responsive" style="width: 90%;padding: 16px 20px 16px 20px;" [hidden]="!showunits40form">
+            <table class="table table-hover">
+              <thead >
+              <tr class="black-muted-bg"  >
+                <th>S.No.</th>
+                  <th>Unit ID</th>
+                  <th>IP address</th>
+                  <th>Network interface</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+                  </thead>
+                  <tbody>
+             
+              <!-- <tr *ngFor="let userData of allcnntdunitlist40  ; let i = index; trackBy: userId" [hidden]="!(userData.status && showofflineunit)" > -->
+              <tr *ngFor="let userData of allcnntdunitlist40  ; let i = index; trackBy: userId" [hidden]="!(userData.status)" >
+                <td style='font-size:15px;'>{{i+1}}</td>
+                <td>{{userData.unitId}}</td>
+                <td>{{userData.attrInfo.networkInfo?.unitIp}}</td>
+                <td>{{userData.attrInfo.v5nmConfig?.Config.Interfaces.iface1.Info}}</td>
+                <td>{{userData.status}}</td>
+                <td>
+                    <!-- <a (click)="display40UnitInfo(userData.unitId)" class="btn btn-primary">Detail</a> -->
+                  <button mat-button class="btn btn-primary">Detail</button>
+                </td>
+              </tr>
+                </table>
+            </div>
+      </div>
+      <div class="table-responsive" style="width: 90%;padding: 16px 20px 16px 20px;" [hidden]="!version40">
+          <table class="table table-hover">
+              <thead>
+              <tr class="black-muted-bg">
+                  <th >S.No.</th>
+                  <th>Unit ID</th>
+                  <th>Build version</th>
+                  <th align="center">Sensor board version</th>
+                  <th>Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let unit of unitversion40; let i = index; trackBy: userId">
+                  <td>{{i+1}}</td>
+                  <td>{{unit.versioninfo.unitId}}</td>
+                  <td >{{unit.versioninfo.version}}</td>
+                  <td style='text-align:center'>{{unit.versioninfo.sensorBoardVersion}}</td>
+              <td>
+                  <button mat-button [routerLink]="" [queryParams]="" class="btn btn-primary">Detail</button>
+                 
+              </td>
+              </tr>
+          </table>
+      </div>
+    </div>
+   
+   <!-- 50 server -->
+   <div class="card" [hidden]='!loggedin50'>
+      <div class="card-header" >
+         <div style='float:left;margin-left:16px;; height:50px;vertical-align: middle;padding-top:10px;'> 50 server</div>
+        <div style='float:right;height:50px;margin-left:50px;margin-right:16px;vertical-align: middle;padding-top:10px;'>
+          <button (click)='clickallconnectunit50()' >Show all units</button>
+          <button (click)='get50unitInfo()' >Get version</button>
+        </div>
+      </div>
+      <div class="card-content" style='height:auto' >
+          <div class="table-responsive" style="width: 90%;padding: 16px 20px 16px 20px;" [hidden]="!showunits50form">
+            <table class="table table-hover">
+              <thead >
+              <tr class="black-muted-bg"  >
+                <th>S.No.</th>
+                  <th>Unit ID</th>
+                  <th>IP address</th>
+                  <th>Network interface</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+                  </thead>
+                  <tbody>
+             
+              <!-- <tr *ngFor="let userData of allcnntdunitlist50  ; let i = index; trackBy: userId" [hidden]="!(userData.status && showofflineunit)" > -->
+              <tr *ngFor="let userData of allcnntdunitlist50  ; let i = index; trackBy: userId" [hidden]="!(userData.status)">
+                <td style='font-size:15px;'>{{i+1}}</td>
+                <td>{{userData.unitId}}</td>
+                <td>{{userData.attrInfo.networkInfo?.unitIp}}</td>
+                <td>{{userData.attrInfo.v5nmConfig?.Config.Interfaces.iface1.Info}}</td>
+                <td>{{userData.status}}</td>
+                <td>
+                    <!-- <a (click)="display50UnitInfo(userData.unitId)" class="btn btn-primary">Detail</a> -->
+                  <button mat-button class="btn btn-primary">Detail</button>
+                </td>
+              </tr>
+                </table>
+            </div>
+      </div>
+      <div class="table-responsive" style="width: 90%;padding: 16px 20px 16px 20px;" [hidden]="!version50">
+          <table class="table table-hover">
+              <thead>
+              <tr class="black-muted-bg">
+                  <th >S.No.</th>
+                  <th>Unit ID</th>
+                  <th>Build version</th>
+                  <th align="center">Sensor board version</th>
+                  <th>Action</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let unit of unitversion50; let i = index; trackBy: userId">
+                  <td>{{i+1}}</td>
+                  <td>{{unit.versioninfo.unitId}}</td>
+                  <td >{{unit.versioninfo.version}}</td>
+                  <td style='text-align:center'>{{unit.versioninfo.sensorBoardVersion}}</td>
+              <td>
+                  <button mat-button [routerLink]="" [queryParams]="" class="btn btn-primary">Detail</button>
+                 
+              </td>
+              </tr>
+          </table>
+      </div>
+    </div>
+   
+
+
+ <!-- 70 server -->
+ <div class="card" [hidden]='!loggedin70'>
+    <div class="card-header" >
+       <div style='float:left;margin-left:16px;; height:70px;vertical-align: middle;padding-top:10px;'> 70 server</div>
+      <div style='float:right;height:70px;margin-left:70px;margin-right:16px;vertical-align: middle;padding-top:10px;'>
+        <button (click)='clickallconnectunit70()' >Show all units</button>
+        <button (click)='get70unitInfo()' >Get version</button>
+      </div>
+    </div>
+    <div class="card-content" style='height:auto' >
+        <div class="table-responsive" style="width: 90%;padding: 16px 20px 16px 20px;" [hidden]="!showunits70form">
+          <table class="table table-hover">
+            <thead >
+            <tr class="black-muted-bg"  >
+              <th>S.No.</th>
+                <th>Unit ID</th>
+                <th>IP address</th>
+                <th>Network interface</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+                </thead>
+                <tbody>
+           
+            <!-- <tr *ngFor="let userData of allcnntdunitlist70  ; let i = index; trackBy: userId" [hidden]="!(userData.status && showofflineunit)" > -->
+            <tr *ngFor="let userData of allcnntdunitlist70  ; let i = index; trackBy: userId" [hidden]="!(userData.status)">
+              <td style='font-size:15px;'>{{i+1}}</td>
+              <td>{{userData.unitId}}</td>
+              <td>{{userData.attrInfo.networkInfo?.unitIp}}</td>
+              <td>{{userData.attrInfo.v5nmConfig?.Config.Interfaces.iface1.Info}}</td>
+              <td>{{userData.status}}</td>
+              <td>
+                  <!-- <a (click)="display70UnitInfo(userData.unitId)" class="btn btn-primary">Detail</a> -->
+                <button mat-button class="btn btn-primary">Detail</button>
+              </td>
+            </tr>
+              </table>
+          </div>
+    </div>
+    <div class="table-responsive" style="width: 90%;padding: 16px 20px 16px 20px;" [hidden]="!version70">
+        <table class="table table-hover">
+            <thead>
+            <tr class="black-muted-bg">
+                <th >S.No.</th>
+                <th>Unit ID</th>
+                <th>Build version</th>
+                <th align="center">Sensor board version</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let unit of unitversion70; let i = index; trackBy: userId">
+                <td>{{i+1}}</td>
+                <td>{{unit.versioninfo.unitId}}</td>
+                <td >{{unit.versioninfo.version}}</td>
+                <td style='text-align:center'>{{unit.versioninfo.sensorBoardVersion}}</td>
+            <td>
+                <button mat-button [routerLink]="" [queryParams]="" class="btn btn-primary">Detail</button>
+               
+            </td>
+            </tr>
+        </table>
+    </div>
+  </div>
+ 
+ 
+
+
 </div>

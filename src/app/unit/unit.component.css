@@ -1,17 +1,75 @@
-.my-container {
-    background-color:#DDF4F2;
-    background: linear-gradient(to right, #DFF2F6 0%,rgb(214, 241, 239) 100%);
-    margin-right: 20px;
+my-container {
+    /* background-color:white; */
+    /* background: linear-gradient(to right, #DFF2F6 0%,rgb(214, 241, 239) 100%); */
+    margin-right: auto;
     margin-top:5px;
-    margin-left: 18px;
+    margin-left: auto;
     height: 84%;
-    width: 66%;
+    width: 79%;
     border-radius: 10px;
     /* box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); */
     /* box-shadow: 0px 0px 5px -8px rgba(0,0,0,0.25), 0px 12px 5px -8px rgba(0,0,0,0.22); */
     position: absolute;
 }
-.container {
-    width:82%;
+.my-button {
+    height:40px;
+    width: 17%;
+    margin-top: 10px;
+    background-color: #009ac9;
+    border: 1px solid transparent;
+    color: #ffffff;
+    font-weight: 300;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.my-button:hover{
+    background-color: #ffffff;
+    color: #009ac9;
+    border-color: #009ac9;
+}
+.card {
+    background-color: white;
+    margin-top: 12px;
+    margin-right: 12px;
+    float: left;
+    width: auto;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    background-clip: padding-box;
+
+}
+.card-header {
+    padding: 12px 12px 12px 12px;
+    border-bottom: 1.5px solid #83CBF7;
+    height: 40px;
+    width: auto;
+    text-align: center;
+}
+.unitdetail{
+    float:left;
+    margin-left: 16px;
+    margin-right: 32px;
+    font-size: 20px;
+    font-weight: bold;
+    height:40px;vertical-align: middle;padding-top:10px;
+}
+.sub{
+    height:3px;
+    padding-top: 25px;
+    font-size: 15px;
+    font-weight: normal;
+}
+.update {
+    float: right;
+    margin-right:70px;
     
+}
+.mat-form-field{
+    color: blue !important;
+}
+.mat-foucs{
+    color:blue
 }

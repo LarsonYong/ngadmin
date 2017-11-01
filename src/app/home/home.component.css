@@ -98,8 +98,8 @@
     z-index: 2;
   }
   .white-back {
-    height: 96%;
-    margin: 20px 150px 50px 150px;
+    height: 100%;
+    margin: 20px 20px 20px 20px;
   }
   .noshadow {
     -webkit-box-shadow: none;

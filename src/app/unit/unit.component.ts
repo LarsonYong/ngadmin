@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./unit.component.css']
 })
 export class UnitComponent implements OnInit {
-
+  unitID =  12125;
+  platform = 'odroid';
+  camera = 'Shany IR';
   constructor() { }
 
   ngOnInit() {

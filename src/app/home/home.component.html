@@ -6,7 +6,7 @@
 <div class="left-menu" >
 <div class='' style='height: 100%'>
     <a routerLink='dashboard' routerLinkActive="active" style='height:100%'>
-    <mat-card class='mat-elevation-z5 sidebutton ' [routerLinkActive]="['isOn']" (click)='dashboardCLicked()'  style='' >
+    <mat-card class='mat-elevation-z5 sidebutton ' [class.isOn]='dashboardwasClicked' (click)='dashboardCLicked()'  style='' >
         <a class="clearfix" style='float:left;font-size:80%;margin-top:33px;color:#1DA1F2; position:absolute;top: 20%;'>DASHBOARD</a>
         <img style='float:left;margin-top:10px;margin-left:59%; position:absolute;top: 20%;' src='assets/icons/dashboard.png'>
     </mat-card>
