@@ -4,7 +4,10 @@ import { logout, AuthenticationGuardService } from '../app/services/authenticati
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: [
+    './app.component.css',
+    '../assets/css/table.scss'
+]
 })
 export class AppComponent {
   title = 'app';

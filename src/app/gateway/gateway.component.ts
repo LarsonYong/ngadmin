@@ -7,7 +7,7 @@ import { MatSnackBar } from '@angular/material';
   templateUrl: './gateway.component.html',
   styleUrls: [
     './gateway.component.css',
-    // '../../assets/css/card.css'
+    '../../assets/css/table.scss'
 ]
 })
 export class GatewayComponent implements OnInit {
@@ -28,6 +28,7 @@ export class GatewayComponent implements OnInit {
 
   ngOnInit() {
   }
+
   clicklogin60() {
     this.http.post('api/v5login60', {
             'username': 'v5root',
