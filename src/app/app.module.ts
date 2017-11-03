@@ -36,6 +36,8 @@ import {
 } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { CanActivate } from "@angular/router"
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { SortGridPipe } from '../app/services/filter-array-pipe'
 
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
@@ -62,10 +64,13 @@ import { HttpModule } from '@angular/http'
     UserComponent,
     LoginComponent,
     DashboardComponent,
-    HomeComponent
+    HomeComponent,
+    SortGridPipe,
   ],
   imports: [
     BrowserModule,
+    Ng2OrderModule,
+    
     FormsModule,
     HttpModule,
     ReactiveFormsModule,

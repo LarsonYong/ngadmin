@@ -1,21 +1,22 @@
 <div class="my-container" >
     <div class="my-container" >
       <div class='button-area' style=''>
-      <button class="my-button">1071</button>
-      <button class="my-button">1081</button>
-      <button class="my-button">12125</button>
-      <button class="my-button">12156</button>
-      <button class="my-button">12329</button>
-      <button class="my-button">12330</button>
-      
-      <button class="my-button">13304</button>
-      <button class="my-button">31116</button>
+      <button mat-button (click)='select_unit(1064)' class="my-button">1064</button>
+      <button mat-button (click)='select_unit(1071)' class="my-button">1071</button>
+      <button mat-button (click)='select_unit(12125)' class="my-button">12125</button>
+      <button mat-button (click)='select_unit(12156)' class="my-button">12156</button>
+      <button mat-button (click)='select_unit(12251)' class="my-button">12251</button>
+      <button mat-button (click)='select_unit(12329)' class="my-button">12329</button>
+      <button mat-button (click)='select_unit(12330)' class="my-button">12330</button>
+      <button mat-button (click)='select_unit(12334)' class="my-button">12334</button>
+      <button mat-button (click)='select_unit(13304)' class="my-button">13304</button>
+      <button mat-button (click)='select_unit(31116)' class="my-button">31116</button>
     </div>
-    <div class="display-area">
+    <div class="display-area" [hidden]="!getHistory">
       <div class="card" style='width:97%'>
         <div class="card-header">
-          <div class='unitdetail' >Unit ID: {{unitID}}</div>
-          <div class='unitdetail sub' >{{platform}} / {{camera}}</div>
+          <div class='unitdetail' >Unit ID: {{UnitDetail.UnitId}}</div>
+          <div class='unitdetail sub'  >{{UnitDetail.Platform}} / {{UnitDetail.CameraType}}</div>
           <div class="update">
           <mat-form-field class="">
               <input matInput placeholder="Build version">
@@ -25,11 +26,25 @@
               <input matInput placeholder="Updated time">
           </mat-form-field>
           
-          <button class="my-button" style='height: 35px; width: 10%; ' mat-button> Update</button>
+          <button class="my-button"  style='height: 35px; width: 10%; ' mat-button> Update
+          </button>
         </div>
         </div>
         <div class="card-content">
-         
+            <div class="table-responsive">
+          <table class="table table-hover" style="width: 80%;padding: 16px 20px 16px 20px;" >
+            <thead>
+                <td style="text-align:center">Build Version</td>
+                <td style="text-align:center">Updated Time</td>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of BuildHistory| sortgrid: '-Time'">
+                <td style="text-align:center">{{item.Build}} </td>
+                <td style="text-align:center">{{item.Time}}</td>
+            </tr>
+            <tbody>
+        </table>
+      </div>
         </div>
       </div>
     </div>
