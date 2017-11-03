@@ -66,3 +66,18 @@
     width: auto;
     text-align: center;
 }
+.table-hover > thead > tr:hover {
+    background-color: #9de8c5;
+  }
+.table-hover > tbody > tr:hover {
+    background-color: #65bff6
+}
+.gateway-button{
+    border-color: #1DA1F2;
+    color: #1DA1F2;
+    border: 1px solid;
+    border-radius: 6px;
+}
+.gateway-button:hover{
+    background-color: #d1ecfc
+}

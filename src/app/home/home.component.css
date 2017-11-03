@@ -122,7 +122,7 @@
     align-items: center; /* Vertical center alignment */
     justify-content: center; /* Horizontal center alignment */
     -webkit-tap-highlight-color: transparent;
-    background-color:  #e8f5fd;
+    background-color:  white;
     color: #1DA1F2;
     
   }

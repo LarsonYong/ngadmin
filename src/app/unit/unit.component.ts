@@ -56,18 +56,25 @@ export class UnitComponent implements OnInit {
 
   add_updateTime(unitId, build, time) {
     if (!this.getHistory){
-      return this.snackbar.open('Need to select unit first !')
+      return this.snackbar.open('Need to select unit first !','Got it')
+    }
+    if (unitId  == undefined) {
+      return this.snackbar.open('Need to select unit first !','Got it')
+    }
+    if (build == '' || time == '') {
+      return this.snackbar.open('please fill in Build version &Updated time!','Got it')
     }
     const po = {
       'UnitId': unitId,
       'Build': build,
       'Time': time,
     };
+    console.log(po)
     this.http.post('api/UpdateHistory', po).map(res => {
-      this.BuildHistory = [];
+      this.BuildHistory = [];  
       this.message = res.json().message;
       console.log(res.json().message);
-      alert(res.json().message);
+      this.snackbar.open(res.json().message,'Got it');
     }).subscribe();
 
     const reqSting = 'api/getUnit/' + this.selectedUnit;
