@@ -65,13 +65,12 @@ export class GatewayComponent implements OnInit {
             console.log('body', res.json().body);
             const botexdy = res.json().body;
             const bos = JSON.parse(botexdy);
-
-            console.log('result:' ,res.json().cookie[0]);
             if (bos.apiStatus.responseStatus == 'status_ok') {
                 this.loggedin60 = true;
                 this.message = 'Success Login!';
-                
+                this.snackBar.open(this.message, 'Got it')
             }else {
+                console.log(this.message);
                 this.message = bos.apiStatus.responseStatus;
                 this.snackBar.open(this.message,'Got it');
             }
@@ -174,6 +173,7 @@ export class GatewayComponent implements OnInit {
                 'cookie': this.cookie30,
             }).map(res => {
                 const bos = res.json().apiStatus.responseStatus;
+                console.log(res.json())
                 if (bos == 'status_ok') {
                     this.unitversion30.push({
                         'versioninfo': res.json().apiData,
